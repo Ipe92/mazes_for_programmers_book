@@ -62,6 +62,10 @@ class Grid
         end
     end
 
+    def contents_of(cell)
+        " "
+    end
+
     def to_s
         output = "+" + "---+" * columns + "\n"
 
@@ -70,9 +74,9 @@ class Grid
             bottom = "+"
 
             row.each do |cell|
-                cell = Cell.new(-1, -1)  unless Cell
+                cell = Cell.new(-1, -1)  unless cell
 
-                body = "   " #<-- that's THREE (3) spaces!
+                body = " #{contents_of(cell)} "
                 east_boundary = (cell.linked?(cell.east) ? " " : "|")
                 top << body << east_boundary
 
@@ -80,12 +84,13 @@ class Grid
                 south_boundary = (cell.linked?(cell.south) ? "   " : "---")
                 corner = "+"
                 bottom << south_boundary << corner
-                end
+            end
+
             output << top << "\n"
             output  << bottom << "\n"
-            end
-        output
         end
+
+        output
     end
 
     def to_png(cell_size: 10)
