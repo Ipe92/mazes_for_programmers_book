@@ -26,7 +26,8 @@ class Wilsons
                 unvisited.delete(path[index])
             end
         end
-
+        deadends = grid.deadends
+        puts "#{deadends.count} dead-ends"
         grid
     end
 
