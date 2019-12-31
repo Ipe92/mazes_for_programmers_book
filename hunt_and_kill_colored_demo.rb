@@ -1,7 +1,7 @@
 require 'colored_grid'
 require 'hunt_and_kill'
 
-grid = ColoredGrid.new(20, 20)
+grid = ColoredGrid.new(100, 100)
 HuntAndKill.on(grid)
 
 middle = grid[grid.rows / 2, grid.columns / 2]
