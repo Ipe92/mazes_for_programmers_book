@@ -11,4 +11,5 @@ grid.distances = distances
 puts grid
 puts "path from nortwest corner to southwest corner:"
 grid.distances = distances.path_to(grid[grid.rows - 1, 0])
+grid.braid(1)
 puts grid.to_s
