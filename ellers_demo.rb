@@ -1,16 +1,12 @@
+require 'ellers'
 require 'colored_grid'
-require 'sidewinder'
 
 grid = ColoredGrid.new(20, 20)
-Sidewinder.on(grid)
+Ellers.on(grid)
 
 middle = grid[grid.rows / 2, grid.columns / 2]
 grid.distances = middle.distances
 
-filename = "sidewinder_maze.png"
+filename = "ellers.png"
 grid.to_png.save(filename)
 puts "saved to #{filename}"
-
-#puts grid
-#img = grid.to_png
-#img.save "sidewinder_maze.png"
